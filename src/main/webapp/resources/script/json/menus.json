@@ -1,0 +1,77 @@
+{
+  "menu1": [
+      {
+        "nome": "seg008",
+        "descricao": "Agenda",
+        "iconUrl": "../../resources/images/calendar (1).png",
+        "url": "../../pages/seguranca/seg008.xhtml"
+      },
+      {
+        "nome": "pro001",
+        "descricao": "Processo",
+        "iconUrl": "../../resources/images/scales (1).png",
+        "url": "../../pages/processo/pro001.xhtml"
+      },
+      {
+        "nome": "pes001",
+        "descricao": "Cliente",
+        "iconUrl": "../../resources/images/businessman (1).png",
+        "url": "../../pages/pessoa/pes001.xhtml"
+      },
+      {
+        "nome": "pes006",
+        "descricao": "Advogado",
+        "iconUrl": "../../resources/images/judge (1).png",
+        "url": "../../pages/pessoa/pes006.xhtml"
+      },
+      {
+        "nome": "pes003",
+        "descricao": "Funcionário",
+        "iconUrl": "../../resources/images/users4 (1).png",
+        "url": "../../pages/pessoa/pes003.xhtml"
+      },
+      {
+        "nome": "seg001",
+        "descricao": "Usuário",
+        "iconUrl": "../../resources/images/user_monitor (1).png",
+        "url": "../../pages/seguranca/seg001.xhtml"
+      },
+      {
+        "nome": "fin001",
+        "descricao": "Título",
+        "iconUrl": "../../resources/images/currency_dollar (1).png",
+        "url": "../../pages/financeiro/fin001.xhtml"
+      },
+      {
+        "nome": "pro009",
+        "descricao": "Processo Andamento",
+        "iconUrl": "../../resources/images/note (1).png",
+        "url": "../../pages/processo/pro009.xhtml"
+      },
+      {
+        "nome": "pro012",
+        "descricao": "Processo Despesa",
+        "iconUrl": "../../resources/images/invoice_dollar (1).png",
+        "url": "../../pages/processo/pro012.xhtml"
+      },
+      {
+        "nome": "pro011",
+        "descricao": "Processo Histórico",
+        "iconUrl": "../../resources/images/orientation_portrait (1).png",
+        "url": "../../pages/processo/pro011.xhtml"
+      },
+      {
+        "nome": "pro013",
+        "descricao": "Processo Honorários",
+        "iconUrl": "../../resources/images/money_bills (1).png",
+        "url": "../../pages/processo/pro013.xhtml"
+      },
+      {
+        "nome": "pro010",
+        "descricao": "Processo Valor",
+        "iconUrl": "../../resources/images/money2 (1).png",
+        "url": "../../pages/processo/pro010.xhtml"
+      }
+      
+    ]
+}

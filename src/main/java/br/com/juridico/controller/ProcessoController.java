@@ -11,12 +11,16 @@ import java.util.List;
 import javax.faces.context.FacesContext;
 
 import javax.inject.Inject;
+import lombok.Setter;
+import lombok.Getter;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 
 @Controller
 @SuppressWarnings("serial")
+@Getter
+@Setter
 public class ProcessoController implements Serializable {
 
     private Processo processo = new Processo();

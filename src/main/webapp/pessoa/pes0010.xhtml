@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html	>
+
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/template/template.xhtml">
+
+    <ui:define name="body">
+
+        <h:form id="idFormPrincipal">
+
+            <p:panel styleClass="painelPrincipal"
+                     style="width: 90%; text-align: left; background-color: #F8F8F8">
+
+                <f:facet name="header" >
+                    <p:panelGrid style="width: 100%">
+                        <p:row>
+                            <p:column style="text-align: left" width="50%">
+                                <h:outputText value="Recuperar o nome dinamicamente" style="color: navy	; font-size: 16px; font-weight: bolder;"/>
+                            </p:column>
+                            <p:column style="text-align: right" width="50%">
+                                <h:outputText value="Código" style="color: navy; font-size: 10px; "/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                </f:facet>
+
+                <h:panelGrid border="0">
+
+                    <div class="ui-g">
+                        <div class="ui-g-12 ui-md-6 ui-lg-2"/>
+                        <div class="ui-g-12 ui-md-6 ui-lg-10">
+
+                            <p:dataTable value="#{pes0010Bean.clientes}" var="cliente" reflow="true"  rows="10" paginator="true">
+                                <p:column headerText="CÃ³digo">
+                                    <h:outputText value="#{cliente.pessoaNum}"/>
+                                </p:column>
+                                <p:column headerText="Descricao">
+                                    <h:outputText value="#{cliente.nmPessoa}"/>
+                                </p:column>                        
+                                <p:column headerText="Descricao">
+                                    <h:outputText value="#{cliente.nmPessoa}"/>
+                                </p:column>                        
+                                <p:column headerText="Descricao">
+                                    <h:outputText value="#{cliente.nmPessoa}"/>
+                                </p:column>                        
+                                <p:column headerText="Descricao">
+                                    <h:outputText value="#{cliente.nmPessoa}"/>
+                                </p:column>                                                        
+                            </p:dataTable>
+
+                        </div>
+                    </div>                    
+
+
+                </h:panelGrid>
+            </p:panel>
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+
+
+

@@ -1,0 +1,42 @@
+root {
+    display: block;
+}
+
+body {
+    margin: 0px 0px 0px 0px;
+    background-image: url("img/fundo.png");
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 100%;
+}
+
+.painelLogin {
+    position: absolute;
+    vertical-align: middle;
+    text-align: left;
+    border-spacing: 3;
+    width: 100%;
+    background-color: white;
+    font-size: 12px;
+}
+
+.divPainelLogin {
+    width: 400px;
+    height: 97%;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 30%;
+}
+
+.prompt {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.teste {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: red;
+}
+

@@ -1,0 +1,11 @@
+#menu {
+    font-size: 10px;
+}
+
+#header {
+    font-size: 10px;
+}
+
+.ui-menu .ui-menu-parent .ui-menu-child {
+    width: 15em !important;
+}

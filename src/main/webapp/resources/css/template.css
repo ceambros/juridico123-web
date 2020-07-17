@@ -1,0 +1,167 @@
+.calendarStyle{
+    width: 50px;
+}
+
+.tabStyle{
+    font-size:10pt;
+    font-weight: bold;
+}
+
+.painelPrincipal {
+    width: 90%;
+    left: 2.7%;
+    -moz-box-shadow: 0 0 3px 2px #a3bbd4;
+    -webkit-box-shadow: 0 0 3px 2px #a3bbd4;
+    box-shadow: 0px 0px 5px 3px #cccccc;
+    opacity: 0.92;
+}
+
+.ajaxStatusContent {
+    top: 90px;
+    position: fixed;
+    z-index: 200000;
+    left: 70px;
+}
+
+#modal-background {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity = 0);
+    z-index: 1000000;
+}
+
+body {
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#conteudo {
+    width: 100%;
+    height: 97%;
+    position: absolute;
+    background-image: url('../resources/img/background2.png');
+    background-repeat: repeat-x;
+    /*background-color: blue;*/
+    /*background-color: #F8F8F8;*/
+    /*background-image: url('../resources/img/background_cutrale.png');**/
+    /*left: 50%;
+margin-left: -512px;*/
+}
+
+#header {
+    width: 100%;
+    height: 97px;
+    /*background-image: url('../resources/img/background.png');*/
+    /*background-image: url('../resources/img/fundo_header.png');*/
+    /*background-color: #F8F8F8;*/
+    /*background-color: green;*/
+    /*background-repeat: repeat-x;*/
+    border-bottom-color: black;
+    /*position: fixed;*/
+    position: absolute;
+    /*z-index: 10000;*/
+}
+
+#menu {
+    background-color: #F8F8F8;
+    padding-top: 80px;
+}
+
+#footer {
+    width: 100%;
+    height: 25px;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    /*background-color: #003061;*/
+}
+
+.panelGridValignTop td {
+    vertical-align: top;
+    border-style: none !important;
+}
+
+.panelGridValignBottom td {
+    vertical-align: bottom;
+    border-style: none !important;
+}
+
+.panelGridValignTopComBorder td {
+    vertical-align: top;
+}
+
+.panelGridValignTop tr {
+    vertical-align: top;
+    border-style: none !important;
+}
+
+.panelGridFiltro td, .panelGridFiltro tr {
+    background-color: #F8F8F8;
+    width: 200px
+}
+
+.promptFiltro {
+    color: navy;
+    font-size: 12px !important;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.cmb {
+    width: 100px;
+}
+
+.cmb .ui-selectonemenu-label {
+    font-size: 10px;
+    background: #cccccc;
+}
+
+.cmb .ui-selectonemenu-list {
+    font-size: 10px;
+}
+
+.cmb .ui-selectonemenu-list-item {
+    /*color: red;*/
+
+}
+
+.fldData {
+    text-align: center;
+}
+
+/*
+.ui-autocomplete-input {
+        width: 100% !important;
+}
+*/
+.ui-autocomplete-panel .ui-autocomplete-list-item {
+    font-size: 12px !important;
+}
+
+.recordStatusInsert {
+    background-color: #d7ebf5;
+    color: #3a87ab;
+    font-weight: bold;
+}
+
+.recordStatusDelete {
+    background-color: #f0dddd;
+    color: #b84948;
+    font-weight: bold;
+
+}
+
+.recordStatusUpdate {
+    background-color: #faf6e3;
+    color: #bd9351;
+    font-weight: bold;
+}

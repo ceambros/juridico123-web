@@ -16,6 +16,9 @@
     <class>br.com.juridico.modelo.Usuario</class>
     <class>br.com.juridico.modelo.Autor</class>
     <class>br.com.juridico.modelo.Livro</class>
+    <class>br.com.juridico.model.Pessoa</class>
+    <class>br.com.juridico.model.TipoPessoa</class>
+    <class>br.com.juridico.model.Funcao</class>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/juridico"/>
