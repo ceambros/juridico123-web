@@ -2,17 +2,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head />
     <h:body>
+
+        <style type="text/css">
+            .ui-g div {
+                background-color: #ededed;
+                text-align: center;
+                border: 1px solid #fafafa;
+            }
+        </style>    
         <h:form>
-            
+
             <p:commandButton value="RefCursor" action="#{processoController.save}"/>
             <p:commandButton value="Transacao" action="#{processoController.testeDeTransacaoJPA}"/>
-            
+
+            <h3>Responsive</h3>
+
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 ui-lg-2"/>
+                <div class="ui-g-12 ui-md-6 ui-lg-10">
+
+                    <p:dataTable value="#{jurisdicaoController.jurisdicoes}" var="jurisdicao" reflow="true" rows="10" paginator="true">
+                        <p:column headerText="CÃ³digo">
+                            <h:outputText value="#{jurisdicao.jurisdicaoNum}"/>
+                        </p:column>
+                        <p:column headerText="Descricao">
+                            <h:outputText value="#{jurisdicao.nmJurisdicao}"/>
+                        </p:column>                        
+                        <p:column headerText="Descricao">
+                            <h:outputText value="#{jurisdicao.nmJurisdicao}"/>
+                        </p:column>                                                
+                        
+                    </p:dataTable>
+
+                </div>
+            </div>
+
         </h:form>
     </h:body>
 
