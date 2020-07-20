@@ -34,7 +34,6 @@ public class ProcessoRepository {
         return processos;
     }
      */
-    @Transactional
     public List<Processo> fcGetProcessosPostgres() {
         TypedQuery<Processo> q = em
                 .createNamedQuery("fcGetProcessos", Processo.class);

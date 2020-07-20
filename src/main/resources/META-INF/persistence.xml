@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-  <persistence-unit name="livraria" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="juridicoPersinteUnit" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <non-jta-data-source>jdbc/juridicoTomcat</non-jta-data-source>
-    <class>br.com.caelum.livraria.bean.CentroCusto</class>
+    <!--<non-jta-data-source>jdbc/juridicoTomcat</non-jta-data-source>-->
     <class>br.com.juridico.model.Jurisdicao</class>
     <class>br.com.juridico.model.Natureza</class>
     <class>br.com.juridico.model.Acao</class>
