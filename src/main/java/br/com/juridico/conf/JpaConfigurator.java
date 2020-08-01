@@ -36,7 +36,7 @@ public class JpaConfigurator {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean getEntityManagerFactory(DataSource dataSource) {
-        
+
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setPersistenceUnitName("juridicoEntityMF");
         entityManagerFactory.setPackagesToScan("br.com.juridico");
@@ -47,6 +47,11 @@ public class JpaConfigurator {
 
         props.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         props.setProperty("hibernate.show_sql", "true");
+        props.setProperty("hibernate.format_sql", "true");        
+        
+        props.setProperty("log4j.logger.org.hibernate.SQL", "DEBUG");
+        props.setProperty("log4j.logger.org.hibernate.type=", "TRACE");
+        
         //props.setProperty("hibernate.hbm2ddl.auto", "create-drop");
         //props.setProperty("hibernate.cache.use_second_level_cache", "true");
         //props.setProperty("hibernate.cache.use_query_cache", "true");

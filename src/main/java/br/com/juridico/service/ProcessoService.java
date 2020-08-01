@@ -17,14 +17,22 @@ public class ProcessoService {
     @Autowired
     ProcessoRepository repository;
 
+    //TESTES
     @Transactional
     public Processo findAll() {
         return repository.findAll();
     }
 
+    //TESTES
     @Transactional
     public List<Processo> fcGetProcessosPostgres() {
         return repository.fcGetProcessosPostgres();
+    }
+
+    @Transactional
+    public Processo insert(Processo processo) {
+        repository.insert(processo);
+        return processo;
     }
 
 }

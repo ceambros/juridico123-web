@@ -143,5 +143,5 @@ public class Acao implements Serializable {
     public String toString() {
         return "br.com.juridico.model.Acao[ acaoNum=" + acaoNum + " ]";
     }
-    
+
 }
