@@ -34,9 +34,8 @@ public class ProcessoController implements Serializable {
     JurisdicaoService jurService;
 
     public void fetchAll() {
-        processo = processoRepository.findAll();
+        //processo = processoRepository.findAll();
         System.out.println(FacesContext.getCurrentInstance().getExternalContext().getUserPrincipal().getName() + "...........");
-
     }
 
     @Transactional

@@ -22,11 +22,11 @@ public class UsuarioDao implements Serializable {
 
 		TypedQuery<Usuario> query = manager.createQuery(
 				" select u from Usuario u "
-						+ " where u.email = :pEmail and u.senha = :pSenha",
+						+ " where u.nmLogin = :pLogin and u.dsSenha = :pSenha",
 				Usuario.class);
 
-		query.setParameter("pEmail", usuario.getEmail());
-		query.setParameter("pSenha", usuario.getSenha());
+		query.setParameter("pLogin", usuario.getNmLogin());
+		query.setParameter("pSenha", usuario.getDsSenha());
 		try {
 			@SuppressWarnings("unused")
 			Usuario resultado = query.getSingleResult();

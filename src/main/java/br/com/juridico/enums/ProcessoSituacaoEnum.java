@@ -6,18 +6,17 @@ package br.com.juridico.enums;
  */
 public enum ProcessoSituacaoEnum implements IStringEnum {
 
-    TODAS("T", "TODAS"),
-    ABERTO("1", "ABERTO"),
-    ACORDO("2", "ACORDO"),
-    ENCERRADO("3", "ENCERRADO"),
-    AGUARDANDO_ARQUIVAMENTO("4", "AGUARDANDO ARQUIV.");
+    TODAS("TODAS"),
+    ABERTO("ABERTO"),
+    ACORDO("ACORDO"),
+    ENCERRADO("ENCERRADO"),
+    AGUARDANDO_ARQUIVAMENTO("AGUARDANDO ARQUIV.");
 
     private String value;
 
     private String label;
 
-    private ProcessoSituacaoEnum(String valorParam, String labelParam) {
-        value = valorParam;
+    private ProcessoSituacaoEnum(String labelParam) {
         label = labelParam;
     }
 

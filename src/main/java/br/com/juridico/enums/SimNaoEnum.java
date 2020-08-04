@@ -6,15 +6,14 @@ package br.com.juridico.enums;
  */
 public enum SimNaoEnum implements IStringEnum {
 
-    SIM("S", "SIM"),
-    NAO("N", "NÃO");
+    SIM("SIM"),
+    NAO("NÃO");
 
     private String value;
 
     private String label;
 
-    private SimNaoEnum(String valorParam, String labelParam) {
-        value = valorParam;
+    private SimNaoEnum(String labelParam) {
         label = labelParam;
     }
 

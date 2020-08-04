@@ -12,40 +12,40 @@ import br.com.juridico.dao.UsuarioDao;
 import br.com.juridico.modelo.Usuario;
 
 @Controller
-public class LoginBean implements Serializable {
-    
+public class LoginBean extends BaseMB implements Serializable {
+
     private static final long serialVersionUID = 1L;
-    
+
     private Usuario usuario = new Usuario();
-    
+
     @Inject
     UsuarioDao dao;
-    
+
     public Usuario getUsuario() {
-        usuario.setEmail("admin");
-        usuario.setSenha("admin");
+        usuario.setNmLogin("admin");
+        usuario.setDsSenha("admin");
         return usuario;
     }
-    
+
     public String efetuaLogin() {
         System.out.println("fazendo login do usuario "
-                + this.usuario.getEmail());
-        
+                + this.usuario.getNmLogin());
+
         FacesContext context = FacesContext.getCurrentInstance();
-        
+
         boolean existe = dao.existe(this.usuario);
         if (existe) {
             context.getExternalContext().getSessionMap()
                     .put("usuarioLogado", this.usuario);
             return "livro?faces-redirect=true";
         }
-        
+
         context.getExternalContext().getFlash().setKeepMessages(true);
-        context.addMessage(null, new FacesMessage("Usu√°rio n√£o encontrado"));
-        
+        context.addMessage(null, new FacesMessage("Usu·rio n„o encontrado"));
+
         return "login?faces-redirect=true";
     }
-    
+
     public String deslogar() {
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().getSessionMap().remove("usuarioLogado");

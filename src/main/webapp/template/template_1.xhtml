@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <h:outputStylesheet library="css" name="template.css"/>
+        <h:outputStylesheet library="css" name="menu.css"/>
+        <h:outputScript rendererType="text/javascript" library="script" name="juridico123.js" />
+    </h:head>
+
+    <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+
+    <p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+              closable="false" resizable="false" showHeader="true"
+              header="Aguarde...">
+        <p:graphicImage library="img" name="load.gif" />
+    </p:dialog>
+
+    <h:body>
+        <div id="conteudo" align="center">
+            <div id="header">
+                <ui:include src="header.xhtml" />
+                <ui:include src="menu.xhtml" />
+            </div>
+            
+            <div id="body"
+                 style="padding-bottom: 5px; font-size: 10px; padding-top: 100px">
+                <ui:insert name="body" />
+            </div>
+            
+            <div id="footer">
+                <ui:include src="footer.xhtml" />
+            </div>
+        </div>
+    </h:body>
+
+</html>

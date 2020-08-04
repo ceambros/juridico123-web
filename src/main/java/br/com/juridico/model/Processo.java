@@ -17,6 +17,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -27,6 +29,7 @@ import javax.persistence.NamedStoredProcedureQueries;
 import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.ParameterMode;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -44,13 +47,9 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "processo")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Processo.findAll", query = "SELECT p FROM Processo p"),
-    @NamedQuery(name = "Processo.findByProcessoNum", query = "SELECT p FROM Processo p WHERE p.processoNum = :processoNum"),
-    @NamedQuery(name = "Processo.findByCodBarras", query = "SELECT p FROM Processo p WHERE p.codBarras = :codBarras"),
-    @NamedQuery(name = "Processo.findByNumProcesso", query = "SELECT p FROM Processo p WHERE p.numProcesso = :numProcesso")
+    @NamedQuery(name = "Processo.findAll", query = "SELECT p FROM Processo p")
 })
 @NamedNativeQuery(name = "fcGetProcessos", callable = true, query = "{? = call fc_get_processos}", resultClass = Processo.class)
-
 @NamedStoredProcedureQueries({
     @NamedStoredProcedureQuery(
             name = "Processo.insert",
@@ -61,10 +60,13 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Processo implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "processo_num")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "processo_sequence")
+    @SequenceGenerator(name = "processo_sequence", sequenceName = "seq_processo", initialValue = 1, allocationSize = 1)
     private Integer processoNum;
 
     @Size(max = 50)

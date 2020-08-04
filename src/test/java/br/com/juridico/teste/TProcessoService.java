@@ -20,6 +20,12 @@ import br.com.juridico.repository.PessoaRepository;
 import br.com.juridico.service.PessoaService;
 import br.com.juridico.service.ProcessoService;
 import br.com.juridico.util.DateUtil;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -36,6 +42,7 @@ public class TProcessoService {
 
     private static PessoaService service;
     private static ProcessoService processoService;
+    private Processo newProcesso = new Processo();
 
     public TProcessoService() {
     }
@@ -66,15 +73,14 @@ public class TProcessoService {
     @Test
     @DisplayName("Inserindo usuario no banco de dados")
     public void insert() {
-        Processo newProcesso = new Processo();
-        newProcesso.setProcessoNum(1);
+
+        newProcesso.setProcessoNum(0);
         newProcesso.setCodBarras("125455597844");
         newProcesso.setNumProcesso("BR-523548");
         newProcesso.setDsProcesso("Excluir Este Processo - JUnit");
         newProcesso.setCdTipoCliente(ProcessoTipoClienteEnum.AUTOR);
-        newProcesso.setSgLiminar(SimNaoEnum.SIM);
+        newProcesso.setSgLiminar(SimNaoEnum.NAO);
         newProcesso.setDtAbertura(DateUtil.getDate());
-        newProcesso.setDtCadastro(DateUtil.getDate());
         newProcesso.setCdSit(ProcessoSituacaoEnum.ABERTO);
         newProcesso.setAcaoNum(new Acao(1));
         newProcesso.setJurisdicaoNum(new Jurisdicao(1));
@@ -83,26 +89,27 @@ public class TProcessoService {
         newProcesso.setNaturezaNum(new Natureza(1));
         newProcesso.setFaseItemNum(new Item(1));
         newProcesso.setUsAlt("JUNIT");
-        newProcesso.setDtAlt(DateUtil.getDate());
-        processoService.insert(newProcesso);     
-        
-        System.out.println(newProcesso);
-    }
-
-    /*
-    @Test
-    @DisplayName("Teste da anotaton DisplayName")
-    public void hello() {
-        List<Pessoa> pessoas = service.findAll();
-        System.out.println("Quantidade de pessoas recuperadas = " + pessoas.size());
-        List<Processo> processos = processoService.fcGetProcessosPostgres();
-        processos.forEach(processo -> System.out.println("Processo = " + processo.getDsProcesso()));
+        processoService.insert(newProcesso);
+        try {
+            System.out.println(new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT).writeValueAsString(newProcesso));
+        } catch (JsonProcessingException ex) {
+            Logger.getLogger(TProcessoService.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Test
-    @DisplayName("Teste da anotaton DisplayName")
-    public void hello2() {
-        System.out.println("........................");
+    @DisplayName("Recuperar todos os processos")
+    public void findAll() {
+        List<Processo> processos = processoService.findAll();
+        processos.forEach(processo -> System.out.println(processo));
     }
-     */
+
+    @Test
+    @DisplayName("Deletando processo")
+    public void delete() {
+        Processo processo = new Processo();
+        processo.setProcessoNum(1);
+        processoService.delete(processo);
+    }
+
 }

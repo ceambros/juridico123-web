@@ -6,15 +6,14 @@ package br.com.juridico.enums;
  */
 public enum ProcessoTipoClienteEnum implements IStringEnum {
 
-    AUTOR("A", "AUTOR"),
-    REU("R", "RÉU");
+    AUTOR("AUTOR"),
+    REU("RÉU");
 
     private String value;
 
     private String label;
 
-    private ProcessoTipoClienteEnum(String valorParam, String labelParam) {
-        value = valorParam;
+    private ProcessoTipoClienteEnum(String labelParam) {
         label = labelParam;
     }
 

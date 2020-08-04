@@ -1,11 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <ui:composition xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:ui="http://java.sun.com/jsf/facelets">
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
 
     <div style="position: relative;">
         <h:form id="idFormMenu">
             <!--            
-                        <p:megaMenu model="#{menuMB.menuModel}"/>
+                <p:megaMenu model="{menuMB.menuModel}"/>
             -->
+            <p:tieredMenu style="width:200px">
+                <p:submenu label="Processo" icon="pi pi-refresh">
+                    <p:menuitem value="Cadastro" icon="pi pi-save" />
+                    <p:menuitem value="Relatorio" icon="pi pi-refresh" />
+                </p:submenu>
+                <p:submenu label="Pessoa" icon="pi pi-refresh">
+                    <p:menuitem value="Cadastro" icon="pi pi-save" />
+                    <p:menuitem value="Relatorio" icon="pi pi-refresh" />
+                </p:submenu>
+                <p:submenu label="Segurança" icon="pi pi-refresh">
+                    <p:menuitem value="Cadastro" icon="pi pi-save" />
+                    <p:menuitem value="Relatorio" icon="pi pi-refresh" />
+                </p:submenu>
+                <p:submenu label="Pagamentos" icon="pi pi-refresh">
+                    <p:menuitem value="Cadastro" icon="pi pi-save" />
+                    <p:menuitem value="Relatorio" icon="pi pi-refresh" />
+                </p:submenu>                
+                <p:submenu label="Non-Ajax Menuitem" icon="pi pi-clone">
+                    <p:menuitem value="Delete" ajax="false" icon="pi pi-times" />
+                </p:submenu>
+                <p:separator />
+                <p:submenu label="Navigations" icon="pi pi-home">
+                    <p:submenu label="Prime Links">
+                        <p:menuitem value="Prime" url="http://www.prime.com.tr" title="xxx" />
+                        <p:menuitem value="PrimeFaces" url="http://www.primefaces.org" />
+                    </p:submenu>
+                    <p:menuitem value="Mobile" />
+                </p:submenu>
+            </p:tieredMenu>            
+
+
         </h:form>
     </div>
 

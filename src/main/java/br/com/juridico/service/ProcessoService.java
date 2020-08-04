@@ -17,9 +17,8 @@ public class ProcessoService {
     @Autowired
     ProcessoRepository repository;
 
-    //TESTES
     @Transactional
-    public Processo findAll() {
+    public List<Processo> findAll() {
         return repository.findAll();
     }
 
@@ -30,9 +29,12 @@ public class ProcessoService {
     }
 
     @Transactional
-    public Processo insert(Processo processo) {
+    public void insert(Processo processo) {
         repository.insert(processo);
-        return processo;
     }
 
+    @Transactional
+    public void delete(Processo processo) {
+        repository.delete(processo);
+    }
 }

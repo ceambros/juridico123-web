@@ -6,16 +6,15 @@ package br.com.juridico.enums;
  */
 public enum ProcessoSentencaEnum implements IStringEnum {
 
-    SELECIONE("T", ""),
-    PROCEDENTE("P", "PROCEDENTE"),
-    IMPROCEDENTE("I", "IMPROCEDENTE");
+    SELECIONE(""),
+    PROCEDENTE("PROCEDENTE"),
+    IMPROCEDENTE("IMPROCEDENTE");
 
     private String value;
 
     private String label;
 
-    private ProcessoSentencaEnum(String valorParam, String labelParam) {
-        value = valorParam;
+    private ProcessoSentencaEnum(String labelParam) {
         label = labelParam;
     }
 

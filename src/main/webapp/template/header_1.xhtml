@@ -34,7 +34,7 @@
                 </p:column>
                 <p:column>
                     <h:outputText
-                        value="{menuMB.pessoa.nome} (#{menuMB.usuarioConectado.nmLogin})"
+                        value="#{menuMB.usuarioConectado.pessoa.nome} (#{menuMB.usuarioConectado.login})"
                         style="font-family: Verdana; color: white; left: 50px; top: 0px; z-index: 7; font-size: 11px; " />
                 </p:column>
             </p:row>
@@ -46,7 +46,7 @@
                 </p:column>
                 <p:column>
                     <h:outputText
-                        value="#{menuMB.usuarioConectado.perfilAcesso.nmPerfil}"
+                        value="#{menuMB.usuarioConectado.perfilAcesso.descricao}"
                         style="font-family: Verdana; color: white; left: 50px; top: 0px; z-index: 7; font-size: 11px; " />
                 </p:column>
             </p:row>
